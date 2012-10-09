@@ -1,6 +1,7 @@
-.exe
-.ilk
-.pdb
-.suo
-.tlog
-.lastbuildstate
+*.exe
+*.ilk
+*.pdb
+*.suo
+*.tlog
+*.lastbuildstate
+*.obj
