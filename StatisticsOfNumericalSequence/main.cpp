@@ -8,6 +8,8 @@
 
 using namespace std;
 
+unsigned int count_sequence_period(vector<mpz_class> sequence);
+
 void debug_msg(int msg);
 
 void debug_msg(mpz_class msg);
@@ -35,7 +37,7 @@ int main(int argc, char* argv[])
     while(cin >> number)
     {
         sum += number;
-        mpz_class numer_squared = number * number;
+        mpz_class number_squared = number * number;
         sum_of_squares += number_squared;
         numbers.push_back(number);
     }
@@ -91,6 +93,46 @@ int main(int argc, char* argv[])
         cerr<<"Wygenerowano"<<endl;*/
 
     return 0;
+}
+
+unsigned int count_sequence_period(vector<int> sequence)
+{
+    int sequence_length = (int) sequence.size();
+    int possible_period = 0;
+    bool is_sequence_broken = false;
+
+    for (int i = 1; i < sequence_length; i++)
+    {
+        if (sequence[0] == sequence[i])
+        {   
+            possible_period = i;
+            is_sequence_broken = false;
+
+            for (int j = 0; j < possible_period; j++)
+            {
+                for (int k = possible_period + j; k < sequence_length; k += possible_period)
+                {
+                    if (sequence[j] != sequence[k])
+                    {
+                        is_sequence_broken = true;
+                        break;
+                    }
+                }
+
+                if (is_sequence_broken)
+                {
+                    break;
+                }
+            }
+        }
+
+        if (!is_sequence_broken && (possible_period != 0))
+        {
+            return possible_period;
+        }
+    }
+
+    return 1;
 }
 
 void debug_msg(int msg)
