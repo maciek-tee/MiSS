@@ -193,6 +193,15 @@ void print_mpz_with_precision(mpz_class number, int precision)
     {
         temp_result.erase(temp_result.length()-zero_to_remove,zero_to_remove);
     }
+//    if(zero_to_remove == a)
+  //  {
+    //	temp_result.erase
+   // }
+   
+   if(temp_result[temp_result.length()-1] == '.') //we do not 
+   {
+   		temp_result.erase(temp_result.length()-1,1);
+   }
 
     /*string temp = "";
 
