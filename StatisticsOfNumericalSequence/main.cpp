@@ -95,7 +95,7 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-unsigned int count_sequence_period(vector<int> sequence)
+unsigned int count_sequence_period(vector<mpz_class> sequence)
 {
     int sequence_length = (int) sequence.size();
     int possible_period = 0;
