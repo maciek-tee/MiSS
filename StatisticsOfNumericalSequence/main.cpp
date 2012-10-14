@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
     while(cin >> number)
     {
         sum += number;
-        mpz_class numer_squared = number * number;
+        mpz_class number_squared = number * number;
         sum_of_squares += number_squared;
         numbers.push_back(number);
     }
