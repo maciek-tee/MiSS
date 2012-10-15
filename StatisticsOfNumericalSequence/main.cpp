@@ -132,7 +132,7 @@ unsigned int count_sequence_period(vector<mpz_class> sequence)
         }
     }
 
-    return 1;
+    return sequence_length;
 }
 
 void debug_msg(int msg)
